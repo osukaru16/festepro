@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Puzzle1</title>
+</head>
+<style type="text/css">
+	
+ #contenido{
+ 	margin: auto;
+ 	width: 100px;
+ 	height: 100px;
+
+ }
+ #contenido button{
+ 	z-index: -1;
+ 	position: absolute;
+
+ }
+
+ #contenido .divMolesto{
+ 	background-color: blue;
+ 	opacity: 0.2;
+ 	width: 100px;
+ 	height: 100px;
+ 	position: absolute;
+ 	z-index: 0;
+ }
+
+ #contenido .divMolesto:hover{
+ 	background-color: green;
+ 	opacity: 0.2;
+ }
+
+ #juegos{
+ 	display: none;
+ }
+
+
+ #juegos a { 
+ 	padding: 4px 25px;
+    background: rgb(19, 143, 247);
+    border: 1px solid #1161B0;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration:none;
+}
+
+ #juegos a:hover { 
+ 	padding: 4px 25px;
+    background: green;
+    border: 1px solid #1161B0;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration:none;
+}
+
+</style>
+<body>
+
+<div id="contenido">
+	<button onclick="juez();">Pulsa Aqui</button>
+	<div class="divMolesto" onclick="molestar()"></div>
+</div>
+
+
+<div id="juegos">
+	<a href="pacman.html" class="boton">pacman</a>
+	<a href="tetris.html" class="boton">tetris</a>
+	<a href="taiko.html" class="boton">taiko</a>
+</div>
+
+</body>
+<script type="text/javascript">
+	
+function juez(){
+	var comprobador1 = (document.getElementsByClassName("divMolesto")[0].style.backgroundColor=="green");
+
+
+	if (comprobador1) {
+		alert("Puzzle superado");
+		document.getElementById("juegos").style.display = "block";
+	}else{
+		alert("consegido 1/2. te falta cambiar el fondo usando js.")
+	}
+
+
+
+}
+
+
+
+function molestar(){
+	alert("Soy el div molesto y estoy delante del botón")
+}
+
+</script>
+</html>
